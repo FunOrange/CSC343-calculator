@@ -1,0 +1,100 @@
+﻿<Window x:Class="CSC343_calculator.Views.TopView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSC343_calculator.Views"
+        mc:Ignorable="d"
+        Title="TopView" Height="400" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="ClearButton" Grid.Column="1" Grid.Row="0" Margin="10" Click="ClearButton_Click">Clear calculations</Button>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Label>Attributes</Label>
+                <TextBox x:Name="ClosureAttributes" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Label>FDs</Label>
+                <TextBox x:Name="ClosureFDs" AcceptsReturn="True" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            </StackPanel>
+        </Grid>
+        <GroupBox x:Name="closureGroupBox" Grid.Column="0" Grid.Row="1" Header="Closure" Margin="10,10,10,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!-- Closure Calculation 1 -->
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <Label>Closure of</Label>
+                    <TextBox x:Name="ClosureTarget1" Width="115" VerticalAlignment="Center" Margin="0,5"></TextBox>
+                    <Label>is:</Label>
+                </StackPanel>
+                <Label x:Name="ClosureResult1" Grid.Row="1" VerticalAlignment="Center"></Label>
+
+                <!-- Closure Calculation 2 -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <Label>Closure of</Label>
+                    <TextBox x:Name="ClosureTarget2" Width="115" VerticalAlignment="Center" Margin="0,5"></TextBox>
+                    <Label>is:</Label>
+                </StackPanel>
+                <Label x:Name="ClosureResult2" Grid.Row="3" VerticalAlignment="Center"></Label>
+
+                <!-- Closure Calculation 3 -->
+                <StackPanel Grid.Row="4" Orientation="Horizontal">
+                    <Label>Closure of</Label>
+                    <TextBox x:Name="ClosureTarget3" Width="115" VerticalAlignment="Center" Margin="0,5"></TextBox>
+                    <Label>is:</Label>
+                </StackPanel>
+                <Label x:Name="ClosureResult3" Grid.Row="5" VerticalAlignment="Center"></Label>
+
+                <!-- Closure Calculation 4 -->
+                <StackPanel Grid.Row="6" Orientation="Horizontal">
+                    <Label>Closure of</Label>
+                    <TextBox x:Name="ClosureTarget4" Width="115" VerticalAlignment="Center" Margin="0,5"></TextBox>
+                    <Label>is:</Label>
+                </StackPanel>
+                <Label x:Name="ClosureResult4" Grid.Row="7" VerticalAlignment="Center"></Label>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="minimalBasisGroupBox" Grid.Column="1" Grid.Row="1" Header="Minimal Basis Step 3" Margin="10,10,10,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <Label>The closure of </Label>
+                    <TextBox x:Name="MinLHS" VerticalAlignment="Center" IsReadOnly="True" Width="60"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Label>without FD</Label>
+                    <TextBox x:Name="WithoutFD" VerticalAlignment="Center" Width="60"></TextBox>
+                    <Label>is:</Label>
+                </StackPanel>
+                <Label x:Name="ClosureWithoutFD" Grid.Row="2"></Label>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
